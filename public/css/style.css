@@ -1,3 +1,8 @@
 :root {
-    --mainthemecolor: 
+    --mainthemecolor: #444545;
+    --secondarythemecolor: #5E7082;
+    --textcolor: #B7B8B8;
+    --alternatewarmcolor: #E6D4B1;
+    --alternatedarkcolor: #6A544D;
+
 }
