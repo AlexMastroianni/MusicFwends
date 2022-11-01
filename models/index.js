@@ -1,13 +1,28 @@
 const User = require("./User");
-const Project = require("./Project");
+const UserProfile = require("./UserProfile");
+const PostTable = require("./PostTable");
+const CommentTable = require("./CommentTable");
 
-User.hasMany(Project, {
-  foreignKey: "user_id",
-  onDelete: "CASCADE",
+User.HasOne(UserProfile);
+
+UserProfile.HasOne(User);
+
+UserProfile.HasMany(PostTable, {
+  through: PostTable,
+  foreignKey: "posts",
 });
 
-Project.belongsTo(User, {
-  foreignKey: "user_id",
+UserProfile.HasMany(CommentTable, {
+  through: PostTable,
+  foreignKey: "posts",
 });
 
-module.exports = { User, Project };
+//userprofile has many commemnts
+
+//post table has many commnets
+
+//comments belong to comment
+
+//
+
+module.exports = { User, UserProfile, PostTable, CommentTable };
