@@ -16,11 +16,18 @@ UserProfile.init(
       allowNull: false,
     },
     profile_avatar: {
-      type: DataTypes.STRING,
+      type: DataTypes.BLOB,
     },
     posts: {
       type: DataTypes.STRING("long"),
       allowNull: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      reference: {
+        model: "user",
+        key: "id",
+      },
     },
   },
   {
@@ -28,6 +35,6 @@ UserProfile.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "project",
+    modelName: "userProile",
   }
 );
