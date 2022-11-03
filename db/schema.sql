@@ -3,4 +3,3 @@ DROP DATABASE IF EXISTS stagename_db;
 
 -- Creates a new stagename database
 CREATE DATABASE stagename_db;
-
