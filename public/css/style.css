@@ -8,6 +8,7 @@
 
 header {
     background-color: var(--mainthemecolor);
+    height: 20rem
 }
 
 h1,
@@ -19,7 +20,15 @@ h3 {
 }
 
 main {
+    height: 100%;
+    width: 100%;
     background-color: var(--mainthemecolor);
+    color: var(--textcolour);
+    overflow-x: hidden;
+}
+
+label {
+    color: var(--textcolor);
 }
 
 button {
@@ -34,4 +43,16 @@ footer {
     color: var(--textcolor);
     font-weight: bold;
     text-align: center;
+}
+
+.form-group {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn {
+    background-color: var(--secondarythemecolor);
+    border-radius: 10rem;
+    align-self: center;
 }
