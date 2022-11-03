@@ -28,7 +28,19 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        len: [10],
+      },
+
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      profile_avatar: {
+        type: DataTypes.STRING,
+      },
+      posts: {
+        type: DataTypes.STRING("long"),
+        allowNull: true,
       },
     },
   },

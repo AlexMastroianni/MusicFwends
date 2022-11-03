@@ -15,7 +15,7 @@ PostTable.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    authur: {
+    author: {
       type: DataTypes.STRING,
       reference: {
         model: "user",
@@ -35,3 +35,5 @@ PostTable.init(
     modelName: "postTable",
   }
 );
+
+module.exports = PostTable;

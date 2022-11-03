@@ -15,7 +15,7 @@ CommentTable.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    authur: {
+    author: {
       type: DataTypes.STRING,
       reference: {
         model: "user",
@@ -39,6 +39,8 @@ CommentTable.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "postTable",
+    modelName: "CommentTable",
   }
 );
+
+module.exports = CommentTable;
