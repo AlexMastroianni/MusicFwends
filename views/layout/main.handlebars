@@ -15,19 +15,24 @@
 
   <body>
     <div class="flex-column justify-space-around">
-      <header
-        class="display-flex justify-space-between align-center p-2"
-        style="background-color: #444545"
-      >
+      <header class="display-flex justify-space-between align-center p-2">
         <h1>Music Fwends</h1>
       </header>
-      <main class="container container-fluid mt-5">
+
+      <main class="container container-fluid">
         <!-- Render the sub layout -->
         {{{body}}}
       </main>
-      <footer>
 
+      <footer class="content has-text-centered enable-line-break">
+        <p>MUSIC FWIENDS built by </p>
+        <a href="">Tobias</a>
+        <a href="">Alex</a>
+        <a href="">Chris</a>
+        <a href="">Rosie</a>
+        &copy; 2022
       </footer>
+
     </div>
 
     <!-- Render script for logged in users only -->
