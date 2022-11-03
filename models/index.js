@@ -2,21 +2,21 @@ const User = require("./User");
 const Post = require("./PostTable");
 const Comment = require("./CommentTable");
 
-User.HasMany(Post);
+User.hasMany(Post);
 
-Post.HasMany(Comment, {
+Post.hasMany(Comment, {
   foreignKey: "post_id",
 });
 
-Post.BelongsTo(User, {
+Post.belongsTo(User, {
   foreignKey: "author",
 });
 
-Comment.BelongsTo(User, {
+Comment.belongsTo(User, {
   foreignKey: "author",
 });
 
-Comment.BelongsTo(Post, {
+Comment.belongsTo(Post, {
   foreignKey: "post_id",
 });
 
