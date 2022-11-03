@@ -1,23 +1,23 @@
-const User = require("./User");
-const Post = require("./PostTable");
-const Comment = require("./CommentTable");
+const User = require('./User');
+const Post = require('./PostTable');
+const Comment = require('./CommentTable');
 
-User.HasMany(Post);
+User.hasMany(Post);
 
-Post.HasMany(Comment, {
-  foreignKey: "post_id",
+Post.hasMany(Comment, {
+    foreignKey: 'post_id',
 });
 
-Post.BelongsTo(User, {
-  foreignKey: "author",
+Post.belongsTo(User, {
+    foreignKey: 'author_id',
 });
 
-Comment.BelongsTo(User, {
-  foreignKey: "author",
+Comment.belongsTo(User, {
+    foreignKey: 'author_id',
 });
 
-Comment.BelongsTo(Post, {
-  foreignKey: "post_id",
+Comment.belongsTo(Post, {
+    foreignKey: 'post_id',
 });
 
 module.exports = { User, Post, Comment };
