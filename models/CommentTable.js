@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class CommentTable extends Model {}
+class CommentTable extends Model { }
 
 CommentTable.init(
   {
@@ -15,15 +15,15 @@ CommentTable.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    author: {
-      type: DataTypes.STRING,
+    author_id: {
+      type: DataTypes.INTEGER,
       reference: {
         model: "user",
         key: "id",
       },
     },
     reaction: {
-      type: DataTypes.VARCHAR,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     post_id: {

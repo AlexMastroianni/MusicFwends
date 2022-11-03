@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class PostTable extends Model {}
+class PostTable extends Model { }
 
 PostTable.init(
   {
@@ -15,15 +15,15 @@ PostTable.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    author: {
-      type: DataTypes.STRING,
+    author_id: {
+      type: DataTypes.INTEGER,
       reference: {
         model: "user",
         key: "id",
       },
     },
     reaction: {
-      type: DataTypes.VARCHAR,
+      type: DataTypes.STRING,
       allowNull: true,
     },
   },
