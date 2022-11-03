@@ -1,0 +1,24 @@
+:root {
+    --mainthemecolor: #444545;
+    --secondarythemecolor: #5E7082;
+    --textcolor: #B7B8B8;
+    --alternatewarmcolor: #E6D4B1;
+    --alternatedarkcolor: #6A544D;
+};
+
+header {
+    background-color: var(--mainthemecolor);
+}
+
+h1 {
+    color: var(--textcolor);
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    background-color: var(--secondarythemecolor);
+    color: var(--textcolor);
+    font-weight: bold;
+    border-radius: 10rem;
+}
