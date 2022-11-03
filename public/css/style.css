@@ -25,6 +25,7 @@ main {
     background-color: var(--mainthemecolor);
     color: var(--textcolour);
     overflow-x: hidden;
+    margin: 0;
 }
 
 label {
