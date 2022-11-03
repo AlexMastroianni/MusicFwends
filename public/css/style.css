@@ -4,5 +4,18 @@
     --textcolor: #B7B8B8;
     --alternatewarmcolor: #E6D4B1;
     --alternatedarkcolor: #6A544D;
+};
 
+header {
+    background-color: var(--mainthemecolor);
+}
+
+h1 {
+    color: var(--textcolor);
+    text-align: center;
+}
+
+button {
+    background-color: var(--secondarythemecolor);
+    color: var(--textcolor);
 }
