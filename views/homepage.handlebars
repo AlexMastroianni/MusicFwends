@@ -1,27 +1,34 @@
-<div class="flex-column" id="login">
+<div class="row">
+  <div class="col-xl">
+    <h2>Been here before?</h2>
 
-  <h2>Been here before?</h2>
-
-  <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address: </label>
-      <input
-        class="form-control form-control-lg"
-        type="email"
-        placeholder="example@email.com"
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="example-input-password-log-in">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="example-input-password-log-in"
-      />
-    </div>
-    <button type="submit" class="btn">Log In</button>
-  </form>
-
-  <h3>Haven't been here before? Sign up!</h3>>
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">Email:</label>
+        <input
+          class="form-input"
+          type="email"
+          id="email-login"
+          placeholder="email@email.com"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password-login">Password:</label>
+        <input
+          class="form-input"
+          type="password"
+          id="password-login"
+          placeholder="password123"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn" type="submit">Log In</button>
+      </div>
+      <div>
+        <h6>First time? <a href="">Sign up!</a></h6>
+      </div>
+    </form>
+  </div>
 </div>
+
+<script src="./js/login.js"></script>

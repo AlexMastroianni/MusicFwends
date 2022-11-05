@@ -1,27 +1,27 @@
-<div class="flex-column" id="sign-up">
+  <div class="col-md-6">
+    <h2>Sign up to Music Fwends</h2>
 
-  <h2>Sign up to Music Fwends!</h2>
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="name-signup">Username:</label>
+        <input class="form-input" type="text" id="name-signup" placeholder="LinkinParkRulz"/>
+      </div>
 
-  <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input
-        class="form-control form-control-lg"
-        type="email"
-        placeholder="example@email.com"
-      />
-    </div>
+      <div class="form-group">
+        <label for="email-signup">Email:</label>
+        <input class="form-input" type="text" id="email-signup" placeholder="email@email.com" />
+      </div>
 
-    <div class="form-group">
-      <label for="example-input-password-sign-up">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="example-input-password-sign-up"
-      />
-    </div>
+      <div class="form-group">
+        <label for="password-signup">Password:</label>
+        <input class="form-input" type="password" id="password-signup" placeholder="password" />
+      </div>
 
-    <button type="submit" class="btn">Sign me up!</button>
-  </form>
-
+      <div class="form-group">
+        <button class="btn" type="submit">Sign me up!</button>
+      </div>
+    </form>
+  </div>
 </div>
+
+<script src="./js/signup.js"></script>
