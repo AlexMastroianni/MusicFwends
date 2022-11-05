@@ -39,6 +39,11 @@ main {
     margin: 0;
 }
 
+img {
+    display: flex;
+    margin-bottom: 10rem;
+}
+
 label {
     color: var(--textcolor);
 }
@@ -48,6 +53,7 @@ button {
     color: var(--textcolor);
     font-weight: bold;
     border-radius: 10rem;
+    border-color: var(--alternatewarmcolor);
 }
 
 footer {
@@ -69,4 +75,12 @@ footer {
     background-color: var(--secondarythemecolor);
     border-radius: 10rem;
     align-self: center;
+}
+
+#sign-up-link {
+    color: var(--alternatewarmcolor);
+}
+
+#sign-up-link ::after {
+    color: var(--secondarythemecolor);
 }
