@@ -65,14 +65,15 @@ const delButtonHandler = async (event) => {
 };
 
 // Still to create
-document.querySelector('.new-post-form');
-document.addEventListener('submit', newPostHandler);
+document
+    .querySelector('.new-post-form')
+    .addEventListener('submit', newPostHandler);
 
 // Still to create
-document.querySelector('.new-comment-form');
-document.addEventListener('submit', newCommentHandler);
+document
+    .querySelector('.new-comment-form')
+    .addEventListener('submit', newCommentHandler);
 
-document.querySelector('.post-list');
-document.addEventListener('click', delButtonHandler);
-
-// const description = document.querySelector('#project-desc').value.trim();
+document
+    .querySelector('.post-list')
+    .addEventListener('click', delButtonHandler);

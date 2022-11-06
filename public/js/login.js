@@ -7,7 +7,7 @@ const loginFormHandler = async (event) => {
 
     if (email && password) {
         // Send a POST request to the API endpoint
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/api/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -22,6 +22,28 @@ const loginFormHandler = async (event) => {
     }
 };
 
+const signupBtnHandler = async (event) => {
+    event.preventDefault();
+
+    if (event) {
+        console.log('the signup button has been clicked');
+        const response = await fetch('/signup', {
+            method: 'GET'
+        });
+
+        if (response.ok) {
+            console.log('You have been redirected to the sign up page');
+            document.location.replace('/signup');
+        } else {
+            console.error(err);
+            alert(response.statusText);
+        }
+    }
+};
+
 document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
+
+document.querySelector('#sign-up-btn')
+    .addEventListener('submit', signupBtnHandler);
