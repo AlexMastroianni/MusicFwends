@@ -6,7 +6,7 @@ const newPostHandler = async (event) => {
   const authorId = document.querySelector('#author_id').value.trim();
 
   if (postContent && authorId) {
-    const response = await fetch('/feed', {
+    const response = await fetch('/api/feed', {
       method: 'POST',
       body: JSON.stringify({ postContent, authorId }),
       headers: {
