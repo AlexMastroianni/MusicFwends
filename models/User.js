@@ -30,13 +30,19 @@ User.init(
       validate: {
         len: [10],
       },
-    },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    profile_avatar: {
-      type: DataTypes.STRING,
+
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      profile_avatar: {
+        type: DataTypes.STRING,
+      },
+      posts: {
+        type: DataTypes.STRING('long'),
+        allowNull: true,
+      },
+
     },
   },
   {
@@ -57,7 +63,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: 'user',
   }
 );
 
