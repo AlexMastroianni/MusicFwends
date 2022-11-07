@@ -1,49 +1,49 @@
 const loginFormHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    // Collect values from the login form
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+  // Collect values from the login form
+  const email = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
-    if (email && password) {
-        // Send a POST request to the API endpoint
-        const response = await fetch('/api/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+  if (email && password) {
+    // Send a POST request to the API endpoint
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-        if (response.ok) {
-            // If successful, redirect the browser to the profile page
-            document.location.replace('/feed');
-        } else {
-            alert(response.statusText);
-        }
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/feed');
+    } else {
+      alert(response.statusText);
     }
+  }
 };
 
 const signupBtnHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    if (event) {
-        console.log('the signup button has been clicked');
-        const response = await fetch('/signup', {
-            method: 'GET'
-        });
+  if (event) {
+    console.log('the signup button has been clicked');
+    const response = await fetch('/signup', {
+      method: 'GET'
+    });
 
-        if (response.ok) {
-            console.log('You have been redirected to the sign up page');
-            document.location.replace('/signup');
-        } else {
-            console.error(err);
-            alert(response.statusText);
-        }
+    if (response.ok) {
+      console.log('You have been redirected to the sign up page');
+      document.location.replace('/signup');
+    } else {
+      console.error(err);
+      alert(response.statusText);
     }
+  }
 };
 
 document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
 
 document.querySelector('#sign-up-btn')
-    .addEventListener('submit', signupBtnHandler);
+  .addEventListener('submit', signupBtnHandler);
