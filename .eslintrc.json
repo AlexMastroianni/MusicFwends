@@ -28,21 +28,10 @@
     "no-use-before-define": "error",
     "no-redeclare": "error",
     "brace-style": "error",
-    "indent": [
-      "error",
-      4
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
+    "indent": ["error", 2],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
     "radix": "off"
   },
-  "extends": [
-    "prettier"
-  ]
+  "extends": ["prettier"]
 }

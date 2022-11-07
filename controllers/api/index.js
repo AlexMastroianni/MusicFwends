@@ -3,6 +3,6 @@ const feedRoutes = require('./feedRoutes');
 // const projectRoutes = require('./projectRoutes');
 
 router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
+router.use('/feed', feedRoutes);
 
 module.exports = router;

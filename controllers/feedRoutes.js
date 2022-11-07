@@ -1,8 +1,8 @@
-const router = require("express").Router();
-const { Comment, Post, User } = require("../models");
+const router = require('express').Router();
+const { Comment, Post, User } = require('../models');
 // const withAuth = require("../utils/auth");
 
-router.get("/feed", async (req, res) => {
+router.get('/feed', async (req, res) => {
   try {
     const postData = await Post.findAll({
       limit: 7,
@@ -12,7 +12,7 @@ router.get("/feed", async (req, res) => {
           include: [
             {
               model: User,
-              attributes: ["name"],
+              attributes: ['name'],
             },
           ],
         },
@@ -24,7 +24,7 @@ router.get("/feed", async (req, res) => {
     const Posts = postData.map((postData) => postData.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render("feed", {
+    res.render('feed', {
       Posts,
       logged_in: req.session.logged_in,
     });
@@ -33,13 +33,13 @@ router.get("/feed", async (req, res) => {
   }
 });
 
-router.get("/feed/:id", async (req, res) => {
+router.get('/feed/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ['name'],
         },
       ],
     });
@@ -47,8 +47,8 @@ router.get("/feed/:id", async (req, res) => {
 
     const Posts = postData.get({ plain: true });
 
-    res.render("feed", {
-      ...Posts,
+    res.render('feed', {
+      Posts,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -56,11 +56,13 @@ router.get("/feed/:id", async (req, res) => {
   }
 });
 
-router.post("/feed/:id", async (req, res) => {
+router.post('/feed/:id', async (req, res) => {
   try {
     const newPostData = await Post.create({
-      ...req.body,
-      user_id: req.session.user_id,
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
     });
 
     res.status(200).json(newPostData);
@@ -69,7 +71,7 @@ router.post("/feed/:id", async (req, res) => {
   }
 });
 
-router.delete("/feed/:id", async (req, res) => {
+router.delete('/feed/:id', async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
@@ -79,7 +81,7 @@ router.delete("/feed/:id", async (req, res) => {
     });
 
     if (!postData) {
-      res.status(404).json({ message: "No Post Found :(" });
+      res.status(404).json({ message: 'No Post Found :(' });
       return;
     }
 
