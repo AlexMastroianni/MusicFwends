@@ -2,6 +2,15 @@ const router = require('express').Router();
 const { Comment, Post, User } = require('../models');
 // const withAuth = require("../utils/auth");
 
+router.get('/', async (req, res) => {
+  try {
+    res.render('feed');
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/feed', async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -56,12 +65,13 @@ router.get('/feed/:id', async (req, res) => {
   }
 });
 
-router.post('/feed/:id', async (req, res) => {
+router.post('/feed', async (req, res) => {
   try {
     const newPostData = await Post.create({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
+        conent: req.params.conent,
       },
     });
 

@@ -1,79 +1,81 @@
 // Function to create new post
 const newPostHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const postContent = document.querySelector('#post-content').value.trim();
-    const authorId = document.querySelector('#author_id').value.trim();
+  const postContent = document.querySelector('#post-content').value.trim();
+  const authorId = document.querySelector('#author_id').value.trim();
 
-    if (postContent && authorId) {
-        const response = await fetch('/api/feed', {
-            method: 'POST',
-            body: JSON.stringify({ postContent, authorId }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+  if (postContent && authorId) {
+    const response = await fetch('/feed', {
+      method: 'POST',
+      body: JSON.stringify({ postContent, authorId }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-        if (response.ok) {
-            document.location.replace('/feed');
-        } else {
-            alert('Failed to create new post');
-        }
+    if (response.ok) {
+      document.location.replace('/feed');
+    } else {
+      alert('Failed to create new post');
     }
+  }
 };
 
 // Function to create new comment
 const newCommentHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const commentContent = document.querySelector('#comment-content').value.trim();
-    const authorId = document.querySelector('#author_id').value.trim();
-    const postId = document.querySelector('#post_id').value.trim();
+  const commentContent = document
+    .querySelector('#comment-content')
+    .value.trim();
+  const authorId = document.querySelector('#author_id').value.trim();
+  const postId = document.querySelector('#post_id').value.trim();
 
-    if (commentContent && authorId && postId) {
-        const response = await fetch('/api/feed', {
-            method: 'POST',
-            body: JSON.stringify({ commentContent, authorId, postId }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+  if (commentContent && authorId && postId) {
+    const response = await fetch('/api/feed', {
+      method: 'POST',
+      body: JSON.stringify({ commentContent, authorId, postId }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-        if (response.ok) {
-            document.location.replace('/feed');
-        } else {
-            alert('Failed to create new comment');
-        }
+    if (response.ok) {
+      document.location.replace('/feed');
+    } else {
+      alert('Failed to create new comment');
     }
+  }
 };
 
 // Function to delete post
 const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
 
-        const response = await fetch(`/api/feed/${id}`, {
-            method: 'DELETE',
-        });
+    const response = await fetch(`/api/feed/${id}`, {
+      method: 'DELETE',
+    });
 
-        if (response.ok) {
-            document.location.replace('/feed');
-        } else {
-            alert('Failed to delete post');
-        }
+    if (response.ok) {
+      document.location.replace('/feed');
+    } else {
+      alert('Failed to delete post');
     }
+  }
 };
 
 // Still to create
 document
-    .querySelector('.new-post-form')
-    .addEventListener('submit', newPostHandler);
+  .querySelector('.new-post-form')
+  .addEventListener('submit', newPostHandler);
 
 // Still to create
 document
-    .querySelector('.new-comment-form')
-    .addEventListener('submit', newCommentHandler);
+  .querySelector('.new-comment-form')
+  .addEventListener('submit', newCommentHandler);
 
 document
-    .querySelector('.post-list')
-    .addEventListener('click', delButtonHandler);
+  .querySelector('.post-list')
+  .addEventListener('click', delButtonHandler);

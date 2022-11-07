@@ -18,3 +18,5 @@ router.get('/signup', async (req, res) => {
     res.statusMessage(500).json(err);
   }
 });
+
+module.exports = router;
