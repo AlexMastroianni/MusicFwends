@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { } = require('../models');
+const {} = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
-
   }
 });
 
@@ -19,6 +18,5 @@ router.get('/signup', async (req, res) => {
     res.statusMessage(500).json(err);
   }
 });
-
 
 module.exports = router;
