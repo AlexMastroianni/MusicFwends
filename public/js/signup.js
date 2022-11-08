@@ -1,7 +1,3 @@
-// const { passwordStrength } = require('check-password-strength');
-// const { passwordStrength : checkPasswordStgh } = require('./index');
-
-
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -18,7 +14,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/feed');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -64,7 +60,7 @@ const passwordStrength = (password, options = defaultOptions, allowedSymbols = '
   let passwordCopy = password || '';
 
   options[0].minDiversity = 0,
-  options[0].minLength = 0;
+    options[0].minLength = 0;
 
   const rules = [
     {
