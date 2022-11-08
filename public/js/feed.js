@@ -6,6 +6,7 @@ const newPostHandler = async (event) => {
   const authorId = document.querySelector('#author_id').value.trim();
 
   if (postContent && authorId) {
+
     const response = await fetch('/feed', {
       method: 'POST',
       body: JSON.stringify({ postContent, authorId }),
@@ -26,9 +27,11 @@ const newPostHandler = async (event) => {
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
+
   const commentContent = document
     .querySelector('#comment-content')
     .value.trim();
+
   const authorId = document.querySelector('#author_id').value.trim();
   const postId = document.querySelector('#post_id').value.trim();
 
@@ -78,4 +81,5 @@ document
 
 document
   .querySelector('.post-list')
+
   .addEventListener('click', delButtonHandler);
