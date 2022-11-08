@@ -38,17 +38,6 @@ User.init(
     profile_avatar: {
       type: DataTypes.STRING,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    profile_avatar: {
-      type: DataTypes.STRING,
-    },
-    // posts: {
-    //   type: DataTypes.STRING('long'),
-    //   allowNull: true,
-    // },
   },
   {
     hooks: {
