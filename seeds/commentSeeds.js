@@ -1,5 +1,3 @@
-// const { CommentTable } = require('../models');
-
 const commentData = [
   {
     id: 1,
