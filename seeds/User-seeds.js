@@ -1,10 +1,10 @@
-const { User } = require('../models');
+// const { User } = require('../models');
 
 const userData = [
   {
     id: 1,
     email: 'feelincute@email.com',
-    password: 'secret123',
+    password: 'secret1234',
     username: 'poop',
     profile_avatar: 'https://via.placeholder.com/150x150',
   },

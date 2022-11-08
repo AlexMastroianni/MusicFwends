@@ -28,7 +28,7 @@ const signupBtnHandler = async (event) => {
   if (event) {
     console.log('the signup button has been clicked');
     const response = await fetch('/signup', {
-      method: 'GET'
+      method: 'GET',
     });
 
     if (response.ok) {
@@ -45,5 +45,6 @@ document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 
-document.querySelector('#sign-up-btn')
+document
+  .querySelector('#sign-up-btn')
   .addEventListener('click', signupBtnHandler);

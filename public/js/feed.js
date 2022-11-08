@@ -6,7 +6,6 @@ const newPostHandler = async (event) => {
   const authorId = document.querySelector('#author_id').value.trim();
 
   if (postContent && authorId) {
-
     const response = await fetch('/feed', {
       method: 'POST',
       body: JSON.stringify({ postContent, authorId }),
@@ -26,7 +25,6 @@ const newPostHandler = async (event) => {
 // Function to create new comment
 const newCommentHandler = async (event) => {
   event.preventDefault();
-
 
   const commentContent = document
     .querySelector('#comment-content')

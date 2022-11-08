@@ -1,17 +1,8 @@
 const router = require('express').Router();
 const { Comment, Post, User } = require('../models');
-// const withAuth = require("../utils/auth");
+const withAuth = require('../utils/auth');
 
-router.get('/feed', async (req, res) => {
-  try {
-    res.render('feed');
-  } catch (err) {
-    console.error(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/feed', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       limit: 7,
@@ -21,7 +12,7 @@ router.get('/feed', async (req, res) => {
           include: [
             {
               model: User,
-              attributes: ['name'],
+              attributes: ['email'],
             },
           ],
         },
@@ -30,20 +21,24 @@ router.get('/feed', async (req, res) => {
     console.log(postData);
 
     // Serialize data so the template can read it
-    const Posts = postData.map((postData) => postData.get({ plain: true }));
-    console.log('=========================================================================');
-    console.log(Posts);
+    const posts = postData.map((postData) => postData.get({ plain: true }));
+    console.log(
+      '========================================================================='
+    );
+    console.log(posts);
     // Pass serialized data and session flag into template
     res.render('feed', {
-      Posts,
+      posts,
+      username: 'Alex',
       logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
+    console.error(err);
   }
 });
 
-router.get('/feed/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -55,18 +50,18 @@ router.get('/feed/:id', async (req, res) => {
     });
     res.json(postData);
 
-    const Posts = postData.get({ plain: true });
+    const posts = postData.get({ plain: true });
 
     res.render('feed', {
-      Posts,
-      logged_in: req.session.logged_in,
+      posts,
+      // logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.post('/feed', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newPostData = await Post.create({
       where: {
@@ -82,7 +77,7 @@ router.post('/feed', async (req, res) => {
   }
 });
 
-router.delete('/feed/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {

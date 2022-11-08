@@ -1,7 +1,6 @@
 // const { passwordStrength } = require('check-password-strength');
 // const { passwordStrength : checkPasswordStgh } = require('./index');
 
-
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -9,9 +8,8 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-
   if (name && email && password) {
-    const response = await fetch('/users', {
+    const response = await fetch('/user', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -37,70 +35,72 @@ const defaultOptions = [
     id: 0,
     value: 'Too weak',
     minDiversity: 0,
-    minLength: 0
+    minLength: 0,
   },
   {
     id: 1,
     value: 'Weak',
     minDiversity: 2,
-    minLength: 6
+    minLength: 6,
   },
   {
     id: 2,
     value: 'Medium',
     minDiversity: 4,
-    minLength: 8
+    minLength: 8,
   },
   {
     id: 3,
     value: 'Strong',
     minDiversity: 4,
-    minLength: 10
-  }
+    minLength: 10,
+  },
 ];
 
-const passwordStrength = (password, options = defaultOptions, allowedSymbols = '!"#\$%&\'\(\)\*\+,-\./:;<=>\?@\[\\\\\\]\^_`\{|\}~') => {
-
+const passwordStrength = (
+  password,
+  options = defaultOptions,
+  allowedSymbols = '!"#$%&\'()*+,-./:;<=>?@[\\\\\\]^_`{|}~'
+) => {
   let passwordCopy = password || '';
 
-  options[0].minDiversity = 0,
-  options[0].minLength = 0;
+  (options[0].minDiversity = 0), (options[0].minLength = 0);
 
   const rules = [
     {
       regex: '[a-z]',
-      message: 'lowercase'
+      message: 'lowercase',
     },
     {
       regex: '[A-Z]',
-      message: 'uppercase'
+      message: 'uppercase',
     },
     {
       regex: '[0-9]',
-      message: 'number'
+      message: 'number',
     },
   ];
 
   if (allowedSymbols) {
     rules.push({
       regex: `[${allowedSymbols}]`,
-      message: 'symbol'
+      message: 'symbol',
     });
   }
 
   let strength = {};
 
   strength.contains = rules
-    .filter(rule => new RegExp(`${rule.regex}`).test(passwordCopy))
-    .map(rule => rule.message);
+    .filter((rule) => new RegExp(`${rule.regex}`).test(passwordCopy))
+    .map((rule) => rule.message);
 
   strength.length = passwordCopy.length;
 
   let fulfilledOptions = options
-    .filter(option => strength.contains.length >= option.minDiversity)
-    .filter(option => strength.length >= option.minLength)
+    .filter((option) => strength.contains.length >= option.minDiversity)
+    .filter((option) => strength.length >= option.minLength)
     .sort((o1, o2) => o2.id - o1.id)
-    .map(option => ({ id: option.id, value: option.value }));
+    .map((option) => ({ id: option.id, value: option.value }));
 
   Object.assign(strength, fulfilledOptions[0]);
 
