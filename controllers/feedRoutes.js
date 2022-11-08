@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comment, Post, User } = require('../models');
 // const withAuth = require("../utils/auth");
 
-router.get('/', async (req, res) => {
+router.get('/feed', async (req, res) => {
   try {
     res.render('feed');
   } catch (err) {
@@ -27,11 +27,12 @@ router.get('/feed', async (req, res) => {
         },
       ],
     });
-    res.json(postData);
+    console.log(postData);
 
     // Serialize data so the template can read it
     const Posts = postData.map((postData) => postData.get({ plain: true }));
-
+    console.log('=========================================================================');
+    console.log(Posts);
     // Pass serialized data and session flag into template
     res.render('feed', {
       Posts,
