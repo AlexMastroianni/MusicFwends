@@ -34,7 +34,7 @@ const newCommentHandler = async (event) => {
   const postId = document.querySelector('#post_id').value.trim();
 
   if (commentContent && authorId && postId) {
-    const response = await fetch('/api/feed', {
+    const response = await fetch('/feed', {
       method: 'POST',
       body: JSON.stringify({ commentContent, authorId, postId }),
       headers: {
@@ -55,7 +55,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/feed/${id}`, {
+    const response = await fetch(`/feed/${id}`, {
       method: 'DELETE',
     });
 

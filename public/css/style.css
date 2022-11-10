@@ -1,86 +1,86 @@
-:root {
+/* :root {
     --mainthemecolor: #444545;
     --secondarythemecolor: #5E7082;
     --textcolor: #B7B8B8;
     --alternatewarmcolor: #E6D4B1;
     --alternatedarkcolor: #6A544D;
-}
+} */
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 header {
-    background-color: var(--mainthemecolor);
-    height: 10rem;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--mainthemecolor);
+  height: 10rem;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-    color: var(--textcolor);
-    font-weight: bold;
-    text-align: center;
-    margin-top: 2.5rem;
+  color: var(--textcolor);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2.5rem;
 }
 
 h2,
 h6 {
-    color: var(--textcolor);
-    font-weight: bold;
-    text-align: center;
+  color: var(--textcolor);
+  font-weight: bold;
+  text-align: center;
 }
 
 main {
-    height: 100%;
-    width: 100%;
-    background-color: var(--mainthemecolor);
-    color: var(--textcolour);
-    margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--mainthemecolor);
+  color: var(--textcolour);
+  margin: 0;
 }
 
 img {
-    display: flex;
-    margin-bottom: 10rem;
+  display: flex;
+  margin-bottom: 10rem;
 }
 
 label {
-    color: var(--textcolor);
+  color: var(--textcolor);
 }
 
 button {
-    background-color: var(--secondarythemecolor);
-    color: var(--textcolor);
-    font-weight: bold;
-    border-radius: 10rem;
-    border-color: var(--alternatewarmcolor);
+  background-color: var(--secondarythemecolor);
+  color: var(--textcolor);
+  font-weight: bold;
+  border-radius: 10rem;
+  border-color: var(--alternatewarmcolor);
 }
 
 footer {
-    background-color: var(--mainthemecolor);
-    color: var(--textcolor);
-    font-weight: bold;
-    text-align: center;
+  background-color: var(--mainthemecolor);
+  color: var(--textcolor);
+  font-weight: bold;
+  text-align: center;
 }
 
 .form-group {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 1.5rem;
-    width: 100%
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
 .btn {
-    background-color: var(--secondarythemecolor);
-    border-radius: 10rem;
-    align-self: center;
+  background-color: var(--secondarythemecolor);
+  border-radius: 10rem;
+  align-self: center;
 }
 
 #sign-up-btn {
-    color: var(--alternatewarmcolor);
+  color: var(--alternatewarmcolor);
 }
 
 #sign-up-link ::after {
-    color: var(--secondarythemecolor);
+  color: var(--secondarythemecolor);
 }
