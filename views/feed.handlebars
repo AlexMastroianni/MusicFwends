@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{user.name}}, to the feed page!</h2>
+    <h2>Welcome, {{user.username}}, to the feed page!</h2>
   </div>
 </div>
 
@@ -26,7 +26,8 @@
     {{#each posts as |post|}}
     <div class="row mb-2">
       <div class="col-lg-8">
-        <h4><a href="/post/{{post.id}}">{{author.name}}</a></h4>
+        <h4><a href="/post/{{post.id}}">{{post.author.username}}</a>
+          {{post.content}}</h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm" data-id="{{post.id}}">Delete Post</button>
@@ -36,7 +37,8 @@
     {{#each comments as |comment|}}
     <div class="row mb-2">
       <div class="col-md-4">
-        <h5><a href="/comment/{{comment.id}}">{{author.name}}</a></h5>
+        <h5><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>
+          {{comment.comment}}</h5>
       </div>
     </div>
     {{/each}}
