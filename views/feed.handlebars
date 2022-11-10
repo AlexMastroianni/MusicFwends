@@ -1,5 +1,52 @@
-{{!  }}
 
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{username}}, to the feed page!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Music Post:</h3>
+
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-content">Post:</label>
+        <textarea class="form-input" id="post-content" name="post-content" /></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn">Create Post</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if posts.length}}
+  <div class="col-xl-12 post-list">
+    <h3>Previous Posts:</h3>
+
+    {{#each posts as |post|}}
+    <ul>
+      <li>
+        {{post.author.email}}
+        {{post.content}}
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm" data-id="{{post.id}}">Delete Post</button>
+      </div>
+    </div>
+    </li>
+    </ul>
+    {{/each}}
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-4">
+        <h5><a href="/comment/{{posts.commments.user.email}}">{{posts.commments.comment}}</a></h5>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div> 
 <script src='./js/feed.js'></script>
 
 {{!-- 
