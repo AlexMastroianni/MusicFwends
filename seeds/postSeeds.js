@@ -31,6 +31,4 @@ const postData = [
   }
 ];
 
-//const seedPostData = () => PostTable.bulkCreate(postData);
-
 module.exports = postData;

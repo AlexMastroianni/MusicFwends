@@ -1,11 +1,11 @@
-<div class="row">
+<div class="row feed-title">
   <div class="col-auto">
     <h2>Welcome, {{user.username}}, to the feed page!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
+<div class="row new-post-div">
+  <div class="col-12">
     <h3>Create a New Music Post:</h3>
 
     <form class="form new-post-form">
@@ -20,30 +20,29 @@
   </div>
 
   {{#if posts.length}}
+  {{!-- {{#if coments.length}} --}}
   <div class="col-xl-12 post-list">
     <h3>Previous Posts:</h3>
 
     {{#each posts as |post|}}
-    <div class="row mb-2">
-      <div class="col-lg-8">
-        <h4><a href="/post/{{post.id}}">{{post.author.username}}</a>
-          {{post.content}}</h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm" data-id="{{post.id}}">Delete Post</button>
-      </div>
-    </div>
-    {{/each}}
-    {{#each comments as |comment|}}
-    <div class="row mb-2">
-      <div class="col-md-4">
-        <h5><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>
-          {{comment.comment}}</h5>
+    <div class="row">
+      <div class="col-lg-12 existing-posts">
+        <h4><a href="/post/{{post.id}}">{{post.author.username}}</a>{{post.content}}</h4>
+        {{#if comments.length}}
+        {{#each comments as |comment|}}
+        <div class="col-md-12 existing-comments">
+          <h5><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>
+            {{comment.comment}}</h5>
+          <button class="btn btn-md" data-id="{{post.id}}">Delete Post</button>
+        </div>
+        {{/each}}
+        {{/if}}
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
-</div>
+
+
 
 <script src="./js/feed.js"></script>
