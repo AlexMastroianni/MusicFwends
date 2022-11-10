@@ -32,7 +32,7 @@ const defaultOptions = [
     id: 0,
     value: 'Too weak',
     minDiversity: 0,
-    minLength: 0
+    minLength: 1
   },
   {
     id: 1,
