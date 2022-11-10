@@ -2,14 +2,14 @@ const userData = [
   {
     id: 1,
     email: 'feelincute@gmail.com',
-    password: 'secret123',
+    password: 'secret1234',
     username: 'poop',
     profile_avatar: 'https://via.placeholder.com/150x150'
   },
   {
     id: 2,
     email: 'feelincutey@gmail.com',
-    password: 'secret123',
+    password: 'secret12345',
     username: 'poopi',
     profile_avatar: 'https://via.placeholder.com/150x150'
   },

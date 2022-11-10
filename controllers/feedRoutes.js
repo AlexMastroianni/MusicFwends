@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Comment, Post, User } = require('../models');
-// const withAuth = require("../utils/auth");
+const withAuth = require('../utils/auth');
 
-router.get('/feed', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     res.render('feed');
   } catch (err) {
@@ -11,7 +11,7 @@ router.get('/feed', async (req, res) => {
   }
 });
 
-router.get('/feed', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       limit: 7,
@@ -43,7 +43,7 @@ router.get('/feed', async (req, res) => {
   }
 });
 
-router.get('/feed/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -66,7 +66,7 @@ router.get('/feed/:id', async (req, res) => {
   }
 });
 
-router.post('/feed', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newPostData = await Post.create({
       where: {
@@ -82,7 +82,7 @@ router.post('/feed', async (req, res) => {
   }
 });
 
-router.delete('/feed/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
