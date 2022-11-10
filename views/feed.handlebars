@@ -30,7 +30,9 @@
           {{post.content}}</h4>
       </div>
       <div class="col-md-4">
+        {{#if post.is_author}}
         <button class="btn btn-sm" data-id="{{post.id}}">Delete Post</button>
+        {{/if}}
       </div>
     </div>
     {{/each}}
