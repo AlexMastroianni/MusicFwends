@@ -84,3 +84,9 @@ footer {
 #sign-up-link ::after {
     color: var(--secondarythemecolor);
 }
+
+#password-strength-result {
+    font-weight: bold;
+    font-size: medium;
+    color: #fff;
+}
