@@ -25,7 +25,7 @@ const postData = [
   },
   {
     id: 5,
-    content: 'and then....',
+    content: 'yeeew',
     author_id: 5
     //reaction: "yooo",
   }

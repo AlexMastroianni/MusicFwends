@@ -4,7 +4,7 @@ const commentData = [
     comment: 'might delete later',
     author_id: 1,
     //reaction: "might delete later",
-    post_id: 1,
+    post_id: 1
   },
   {
     id: 2,

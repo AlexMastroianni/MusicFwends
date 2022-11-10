@@ -25,19 +25,22 @@
     <h3>Previous Posts:</h3>
 
     {{#each posts as |post|}}
-    {{!-- {{#each coments as |comment|}} --}}
-    <div class="row">
-      <div class="col-lg-12 previous-posts">
-        <h4><a href="/post/{{post.id}}">{{post.author.email}}</a>{{post.content}}</h4>
-        {{#if comments.length}}
-        {{#each comments as |comment|}}
-        <div class="col-md-12 existing-comments">
-          <h6><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>{{comment.comment}}</h6>
-        </div>
-        <button class="btn btn-md" data-id="{{post.id}}">Delete Post</button>
-        {{/each}}
-        {{/if}}
-      </div>   
+    <div class="row mb-2">
+      <div class="col-lg-8">
+        <h4><a href="/post/{{post.id}}">{{post.author.username}}</a>
+          {{post.content}}</h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm" data-id="{{post.id}}">Delete Post</button>
+      </div>
+    </div>
+    {{/each}}
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-4">
+        <h5><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>
+          {{comment.comment}}</h5>
+      </div>
     </div>
     {{/each}}
   </div>

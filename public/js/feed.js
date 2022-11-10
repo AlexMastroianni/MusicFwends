@@ -1,18 +1,15 @@
 // Function to create new post
 const newPostHandler = async (event) => {
   event.preventDefault();
-
   const postContent = document.querySelector('#post-content').value.trim();
-  const authorId = document.querySelector('#author_id').value.trim();
 
-  if (postContent && authorId) {
-
-    const response = await fetch('/feed', {
+  if (postContent) {
+    const response = await fetch('/api/feed', {
       method: 'POST',
-      body: JSON.stringify({ postContent, authorId }),
+      body: JSON.stringify({ postContent }),
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     });
 
     if (response.ok) {
@@ -27,7 +24,6 @@ const newPostHandler = async (event) => {
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
-
   const commentContent = document
     .querySelector('#comment-content')
     .value.trim();
@@ -40,8 +36,8 @@ const newCommentHandler = async (event) => {
       method: 'POST',
       body: JSON.stringify({ commentContent, authorId, postId }),
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     });
 
     if (response.ok) {
@@ -58,7 +54,7 @@ const delButtonHandler = async (event) => {
     const id = event.target.getAttribute('data-id');
 
     const response = await fetch(`/api/feed/${id}`, {
-      method: 'DELETE',
+      method: 'DELETE'
     });
 
     if (response.ok) {
