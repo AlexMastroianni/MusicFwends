@@ -25,12 +25,10 @@ const postData = [
   },
   {
     id: 5,
-    content: 'yeeew',
+    content: 'and then....',
     author_id: 5
     //reaction: "yooo",
   }
 ];
-
-//const seedPostData = () => PostTable.bulkCreate(postData);
 
 module.exports = postData;
