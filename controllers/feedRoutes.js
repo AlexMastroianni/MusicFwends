@@ -4,15 +4,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    res.render('feed');
-  } catch (err) {
-    console.error(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/', withAuth, async (req, res) => {
-  try {
     const postData = await Post.findAll({
       limit: 7,
       include: [
@@ -21,45 +12,48 @@ router.get('/', withAuth, async (req, res) => {
           include: [
             {
               model: User,
-              attributes: ['name'],
-            },
-          ],
-        },
-      ],
+              attributes: ['email']
+            }
+          ]
+        }
+      ]
     });
     console.log(postData);
 
     // Serialize data so the template can read it
-    const Posts = postData.map((postData) => postData.get({ plain: true }));
-    console.log('=========================================================================');
-    console.log(Posts);
+    const posts = postData.map((postData) => postData.get({ plain: true }));
+    console.log(
+      '========================================================================='
+    );
+    console.log(posts);
     // Pass serialized data and session flag into template
     res.render('feed', {
-      Posts,
-      logged_in: req.session.logged_in,
+      posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log('hello');
   }
 });
 
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
-        },
-      ],
+          attributes: ['name']
+        }
+      ]
     });
     res.json(postData);
 
-    const Posts = postData.get({ plain: true });
+    const posts = postData.get({ plain: true });
 
     res.render('feed', {
-      Posts,
-      logged_in: req.session.logged_in,
+      posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -72,8 +66,8 @@ router.post('/', async (req, res) => {
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
-        conent: req.params.conent,
-      },
+        conent: req.params.conent
+      }
     });
 
     res.status(200).json(newPostData);
@@ -82,13 +76,13 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
-      },
+        user_id: req.session.user_id
+      }
     });
 
     if (!postData) {

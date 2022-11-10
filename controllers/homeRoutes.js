@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -44,7 +44,6 @@ router.post('/', withAuth, async (req, res) => {
       // send them some data back just to be nice
       res.json({ user: userData, message: 'You are now logged in!' });
     });
-
   } catch (err) {
     res.status(400).json(err);
   }
@@ -57,24 +56,5 @@ router.get('/signup', async (req, res) => {
     res.statusMessage(500).json(err);
   }
 });
-
-// router.get('/feed', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Post }],
-//     });
-
-//     const user = userData.get({ plain: true });
-
-//     res.render('feed', {
-//       user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;
