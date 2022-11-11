@@ -29,21 +29,23 @@
       <div class="col-lg-12 existing-posts">
         <h4><a href="/post/{{post.id}}">{{post.author.username}}</a>
           {{post.content}}</h4>
-      </div>
-      <div class="col-md-4">
-        {{#if post.is_author}}
-        <button class="btn btn-sm" data-id="{{post.id}}">Delete Post</button>
-        {{/if}}
-        {{#if post.is_author}}
-        <button class="btn btn-md" data-id="{{post.id}}">Delete Post</button>
-        {{/if}}
+
+        {{#if comments.length}}
+        {{#each comments as |comment|}}
+        <div class="col-md-12 existing-comments">
+          <h6><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>
+            {{comment.comment}}</h6>
+          {{/each}}
+          {{/if}}
+          {{#if post.is_author}}
+          <button class="btn btn-md" data-id="{{post.id}}">Delete Post</button>
+          {{/if}}
+        </div>
       </div>
     </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
-{{/if}}
+  {{/if}}
 
 
-
-<script src="./js/feed.js"></script>
+  <script src="./js/feed.js"></script>
