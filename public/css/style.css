@@ -8,20 +8,25 @@
 
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 header {
-  background-color: var(--mainthemecolor);
-  height: 10rem;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  background-color: var(--mainthemecolor);
+  height: 10rem;
 }
 
+footer {
+  margin-bottom: 0;
+}
 h1 {
   color: var(--textcolor);
   font-weight: bold;
   text-align: center;
-  margin-top: 2.5rem;
+  padding-top: 2.5rem;
 }
 
 h2,
@@ -50,14 +55,6 @@ img {
 label {
   color: var(--textcolor);
 }
-/* 
-button {
-  background-color: var(--secondarythemecolor);
-  color: var(--textcolor);
-  font-weight: bold;
-  border-radius: 10rem;
-  border-color: var(--alternatewarmcolor);
-} */
 
 footer {
   background-color: var(--mainthemecolor);
@@ -82,6 +79,17 @@ footer {
   border-radius: 10rem;
   align-self: center;
   margin-top: 0%;
+}
+
+#app-icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#logout-btn {
+  display: flex;
+  margin-left: 75rem;
 }
 
 #sign-up-btn {

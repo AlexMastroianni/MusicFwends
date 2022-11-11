@@ -16,10 +16,18 @@
 
   <body>
     <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center p-2">
+      <header class="display-flex justify-space-between align-center">
         <h1>Music Fwends</h1>
-        <img src="./images/icon.bmp" />
+        {{#unless user}}
+        <button id="logout-btn" type="submit" class="btn">Log Out</button>
+        {{/unless}}
+        <div class="d-flex justify-content-start">
+          <img id="app-icon" src="./images/icon.bmp"/>
+        </div>
+
+        
       </header>
+      
 
       <main class="container-fluid">
         <!-- Render the sub layout -->
@@ -27,7 +35,7 @@
       </main>
 
       <footer class="display-flex justify-space-between align-center p-2">
-        <p>MUSIC FWIENDS built by </p>
+        <p>MUSIC FWENDS built by </p>
         <a href="">Tobias</a>
         <a href="">Alex</a>
         <a href="">Chris</a>
