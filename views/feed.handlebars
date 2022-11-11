@@ -1,6 +1,7 @@
 <div class="row feed-title">
   <div class="col-auto">
-    <h2>Welcome, {{user.username}}, to the feed page!</h2>
+    <h2>Welcome, {{user.username}}, to the feed page!</h2> <button id="logout" type="submit" class="btn">Log
+      Out</button>
   </div>
 </div>
 
@@ -27,15 +28,15 @@
     <div class="row">
       <div class="col-lg-12 existing-posts">
         <h4><a href="/post/{{post.id}}">{{post.author.username}}</a>
-        {{post.content}}</h4>
-        
+          {{post.content}}</h4>
+
         {{#if comments.length}}
         {{#each comments as |comment|}}
         <div class="col-md-12 existing-comments">
           <h6><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>
             {{comment.comment}}</h6>
-        {{/each}}
-        {{/if}}
+          {{/each}}
+          {{/if}}
           {{#if post.is_author}}
           <button class="btn btn-md" data-id="{{post.id}}">Delete Post</button>
           {{/if}}
@@ -47,5 +48,4 @@
   {{/if}}
 
 
-
-<script src="./js/feed.js"></script>
+  <script src="./js/feed.js"></script>
