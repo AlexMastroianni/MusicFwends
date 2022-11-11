@@ -32,8 +32,8 @@
         {{#if comments.length}}
         {{#each comments as |comment|}}
         <div class="col-md-12 existing-comments">
-          <h5><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>
-            {{comment.comment}}</h5>
+          <h6><a href="/comment/{{comment.id}}">{{comment.author.username}}</a>
+            {{comment.comment}}</h6>
         {{/each}}
         {{/if}}
           {{#if post.is_author}}
