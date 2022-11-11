@@ -16,23 +16,26 @@
 
   <body>
     <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center p-2">
+      <header class="display-flex justify-space-between align-center">
         <h1>Music Fwends</h1>
-        <img src="./images/icon.bmp" />
+        <img id="app-icon" src="./images/icon.bmp"/>
       </header>
+      
 
       <main class="container-fluid">
         <!-- Render the sub layout -->
         {{{body}}}
       </main>
 
-      <footer class="display-flex justify-space-between align-center p-2">
-        <p>MUSIC FWIENDS built by </p>
-        <a href="">Tobias</a>
-        <a href="">Alex</a>
-        <a href="">Chris</a>
-        <a href="">Rosie</a>
-        &copy; 2022
+      <footer class="card">
+        <div class="card-body footer-card">
+          <h6 class="footer-title">MUSIC FWENDS built by </p>
+          <p><a href="https://github.com/Virgona">Tobias</a></p>
+          <p><a href="https://github.com/AlexMastroianni">Alex</a></p>
+          <p><a href="https://github.com/ChristopherGatt">Chris</a></p>
+          <p><a href="https://github.com/RosemaryJF">Rosemary</a></p>
+          &copy; 2022
+        </div>
       </footer>
 
     </div>
