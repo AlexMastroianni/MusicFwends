@@ -5,11 +5,11 @@
   --alternatewarmcolor: #e6d4b1;
   --alternatedarkcolor: #6a544d;
 }
-
+/* 
 body {
   overflow-x: hidden;
   overflow-y: hidden;
-}
+} */
 
 header {
   justify-content: center;
@@ -19,9 +19,13 @@ header {
   height: 10rem;
 }
 
-footer {
+.footer-card {
+  background-color: var(--mainthemecolor);
+  border-color: var(--mainthemecolor);
+  height: 50%;
   margin-bottom: 0;
 }
+
 h1 {
   color: var(--textcolor);
   font-weight: bold;
@@ -32,11 +36,18 @@ h1 {
 h2,
 h3,
 h4,
-h5,
 h6 {
   color: var(--textcolor);
   font-weight: bold;
   text-align: center;
+}
+
+h5 {
+  color: var(--textcolor);
+}
+
+p {
+  color: var(--secondarythemecolor);
 }
 
 main {
@@ -76,7 +87,7 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: var(--secondarythemecolor);
-  border-radius: 10rem;
+  border-radius: 5rem;
   align-self: center;
   margin-top: 0%;
 }
@@ -114,12 +125,26 @@ footer {
   color: #fff;
 }
 
+textarea {
+  border-radius: 10rem;
+  margin-bottom: 2.5%;
+}
+
+:placeholder-shown {
+  text-align: center;
+}
+
 .login-form,
 .feed-title,
-.existing-posts,
+#existing-posts,
 .existing-comments {
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 100%;
+}
+
+#existing-posts {
+  border-color: #b7b8b8;
+  border-width: 5px;
 }
