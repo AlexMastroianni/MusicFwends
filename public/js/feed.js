@@ -50,6 +50,7 @@ const newCommentHandler = async (event) => {
 
 // Function to delete post
 const delButtonHandler = async (event) => {
+  console.log(event.target);
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -71,11 +72,10 @@ document
   .addEventListener('submit', newPostHandler);
 
 // Still to create
-document
-  .querySelector('.new-comment-form')
-  .addEventListener('submit', newCommentHandler);
+// document
+//   .querySelector('.new-comment-form')
+//   .addEventListener('submit', newCommentHandler);
 
 document
   .querySelector('.post-list')
-
   .addEventListener('click', delButtonHandler);
