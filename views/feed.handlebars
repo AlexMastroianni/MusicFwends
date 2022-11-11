@@ -1,6 +1,5 @@
 <div class="row feed-title">
   <div class="col-auto">
-      <button id="logout-btn" type="submit" class="btn">Log Out</button>
     <h2>Welcome, {{user.username}}, to the feed page!</h2> 
   </div>
 </div>
@@ -10,9 +9,8 @@
     <h3>Create a New Music Post:</h3>
 
     <form class="form new-post-form">
-      <div class="form-group">
-        <label for="post-content">Post:</label>
-        <textarea class="form-input" id="post-content" name="post-content" /></textarea>
+      <div class="form-group form-row">
+        <textarea class="form-input col-10" id="post-content" name="post-content" /></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn">Create Post</button>

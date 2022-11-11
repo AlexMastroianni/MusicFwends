@@ -18,14 +18,12 @@
     <div class="flex-column justify-space-around">
       <header class="display-flex justify-space-between align-center">
         <h1>Music Fwends</h1>
-        {{#unless user}}
-        <button id="logout-btn" type="submit" class="btn">Log Out</button>
-        {{/unless}}
-        <div class="d-flex justify-content-start">
+        {{#if user}}
+        <button id="logout" type="submit" class="btn">Log Out</button>
+        {{/if}}
+        <div class="">
           <img id="app-icon" src="./images/icon.bmp"/>
-        </div>
-
-        
+        </div>        
       </header>
       
 
@@ -36,10 +34,10 @@
 
       <footer class="display-flex justify-space-between align-center p-2">
         <p>MUSIC FWENDS built by </p>
-        <a href="">Tobias</a>
-        <a href="">Alex</a>
-        <a href="">Chris</a>
-        <a href="">Rosie</a>
+        <a href="https://github.com/Virgona">Tobias</a>
+        <a href="https://github.com/AlexMastroianni">Alex</a>
+        <a href="https://github.com/ChristopherGatt">Chris</a>
+        <a href="https://github.com/RosemaryJF">Rosemary</a>
         &copy; 2022
       </footer>
 
