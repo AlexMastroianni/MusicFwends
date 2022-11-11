@@ -88,9 +88,13 @@ footer {
   color: var(--alternatewarmcolor);
 }
 
-/* #sign-me-up-btn {
+#signup-redirect {
+  margin-top: 3.5rem;
+}
 
-} */
+#sign-me-up-btn {
+  margin: 0.2rem;
+}
 
 #sign-up-link ::after {
   color: var(--secondarythemecolor);

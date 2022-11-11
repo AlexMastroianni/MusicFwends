@@ -7,16 +7,21 @@
         <input type="email" class="form-control" id="email-login" placeholder="Email: email@email.com" aria-describedby="emailInput">
       </div>
 
-    <div class="col-6">
-      <input type="password" id="password-login" class="form-control" placeholder="Password: password12345!" aria-describedby="passwordEntryToLogin">
-    <div class="form-group">
-        <button class="btn" type="submit">Log In</button>
+      <div class="col-3">
+        <input type="password" id="password-login" class="form-control" placeholder="Password: password12345!" aria-describedby="passwordEntryToLogin">
+      </div>
     </div>
-
-    <div>
-      <h6>First time?
-        <button class="btn" type="submit" id="sign-up-btn">Sign up!</button>
-      </h6>
+      
+    <div class="form-group form-row">
+      <div class="col-6">
+        <button class="btn btn-md btn-block" type="submit">Log In</button>
+      </div>
+      
+      <div class="col-12" id="signup-redirect">
+        <h6>First time?      
+          <button class="btn btn-sm" type="submit" id="sign-up-btn">Sign up!</button>
+        </h6>
+      </div>
     </div>
   </form>
 </div>
