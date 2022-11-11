@@ -50,14 +50,14 @@ img {
 label {
   color: var(--textcolor);
 }
-
+/* 
 button {
   background-color: var(--secondarythemecolor);
   color: var(--textcolor);
   font-weight: bold;
   border-radius: 10rem;
   border-color: var(--alternatewarmcolor);
-}
+} */
 
 footer {
   background-color: var(--mainthemecolor);
@@ -75,14 +75,22 @@ footer {
 }
 
 .btn {
+  color: var(--alternatewarmcolor);
+  justify-content: center;
+  align-items: center;
   background-color: var(--secondarythemecolor);
   border-radius: 10rem;
   align-self: center;
+  margin-top: 0%;
 }
 
 #sign-up-btn {
   color: var(--alternatewarmcolor);
 }
+
+/* #sign-me-up-btn {
+
+} */
 
 #sign-up-link ::after {
   color: var(--secondarythemecolor);
@@ -94,13 +102,12 @@ footer {
   color: #fff;
 }
 
+.login-form,
 .feed-title,
-/* .new-post-div, */
 .existing-posts,
 .existing-comments {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* margin-top: 1.5rem; */
   width: 100%;
 }
