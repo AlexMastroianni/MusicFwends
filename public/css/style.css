@@ -105,6 +105,10 @@ p {
   margin: 0.2rem;
 }
 
+#create-post-btn {
+  margin-top: 1.5rem;
+}
+
 /* Password strength checker styling */
 #password-strength-result {
   font-weight: bold;

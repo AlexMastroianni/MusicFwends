@@ -17,14 +17,14 @@
       <div class="form-group form-row">
         <textarea class="form-input col-8 rounded-lg" id="post-content" placeholder="Write your mic drop moment here"/></textarea>
         <div class="col-8">
-          <button type="submit" class="btn btn-md btn-block">Create Post</button>
+          <button type="submit" class="btn btn-md btn-block" id="create-post-btn">Create Post</button>
         </div>
       </div>
     </form>
   </div>
 
   <!-- Card to show previous posts and applicable comments  -->
-  {{!-- All rendered through handlebar utility functions --}}
+  <!-- All rendered through handlebar utility functions -->
   {{#if posts.length}}
   <div class="card-body post-list">
     <h3>Previous Posts:</h3>
@@ -32,20 +32,23 @@
     {{#each posts as |post|}}
     <div class="row">
       <div class="col-lg-12" id="existing-posts">
-        <h5>{{post.user.username}} posted: <a href="/post/{{post.id}}"></a>
-          {{post.content}}</h5>
+        
+          <h5>{{post.user.username}} posted: <a href="/post/{{post.id}}"></a>
+            {{post.content}}</h5>
 
-        {{#if comments.length}}
-        {{#each comments as |comment|}}
-        <div class="col-md-12 existing-comments">
-          <p>{{comment.user.email}} commented: <a href="/comment/{{comment.id}}"></a>
-            {{comment.comment}}</p>
-          {{/each}}
-          {{/if}}
-          {{#if post.is_author}}
-          <button class="btn btn-md" data-id="{{post.id}}">Delete Post</button>
-          {{/if}}
-        </div>
+          {{#if comments.length}}
+          {{#each comments as |comment|}}
+          <div class="col-md-12 existing-comments">
+              <p>{{comment.user.email}} commented: <a href="/comment/{{comment.id}}"></a>
+                {{comment.comment}}</p>
+              <!-- Required div for npm package creating like/dislike buttons -->
+              <div data-lyket-type="updown" data-lyket-id="my-first-post" id="reactions"></div>
+              {{/each}}
+              {{/if}}
+              {{#if post.is_author}}
+              <button class="btn btn-md" data-id="{{post.id}}">Delete Post</button>
+              {{/if}}
+          </div>
       </div>
     </div>
     {{/each}}
