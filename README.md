@@ -1,5 +1,20 @@
 # Music Fwends
 
+## Table of Contents
+
+- [Team](#team)
+- [About](#about)
+- [Purpose](#purpose)
+- [Requirements](#requirements)
+- [Technologies](#technologies)
+- [Functionality](#functionality)
+- [Screenshots](#screenshots)
+- [Credits](#credits)
+- [Future Development](#future-development)
+- [Github](#github)
+- [Deployed Application](#deployed-application)
+- [Credits](#credits)
+
 ## Team
 
 Tobias Virgona(engineer, back end developer ,de-bugger) [Github](https://github.com/virgona)
@@ -14,8 +29,6 @@ Our project is called Music Fwends! A simple social media website that allows us
 ## Purpose
 
 The purpose of this project is to collaborate with a team of developers, coming together whilst using multiple technologies in conjuction to create a real-world full-stack application that you’ll be able to showcase to potential employers.
-
-<!-- ## Future Development -->
 
 ## Requirements
 
@@ -49,7 +62,7 @@ Have a quality README (with unique name, description, technologies used, screens
 
 Finally, you must add your project to the portfolio that you created in Module 2.
 
-## Technologies used
+## Technologies
 
 Node.js
 
@@ -87,13 +100,24 @@ Bootstrap
 
 8. If the page is reloaded the data will be saved
 
-## User Interface Screenshots
+## Screenshots
 
 ![MusicFwends login/signup page]()
 
 ![MusicFwends main page]()
 
 ![MusicFwends in use]()
+
+## Future Development
+
+In the future we want to take Music Fwends to the next level by adding the following functionalities:
+
+- Like/dislike counter fully functional
+- Ability to add/delete a comment
+- Ability to update an existing post
+- Emoji reactions to posts/comments
+- Ability for the user to add emojis to their posts/comments
+- User profile pages
 
 ## Github
 
@@ -102,3 +126,10 @@ The repository can be found [here](https://github.com/AlexMastroianni/MusicFwend
 ## Deployed Application
 
 The Deployed Appliction can be found [here!](https://music-fweinds.herokuapp.com)
+
+## Credits
+
+- https://www.npmjs.com/package/@lyket/widget/v/1.4.8
+- https://lyket.dev/docs/html
+- https://getbootstrap.com/docs/4.6/getting-started/introduction/
+- https://handlebarsjs.com/
