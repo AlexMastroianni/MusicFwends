@@ -8,6 +8,9 @@ router.get('/', withAuth, async (req, res) => {
       limit: 7,
       include: [
         {
+          model: User,
+        },
+        {
           model: Comment,
           include: [
             {
