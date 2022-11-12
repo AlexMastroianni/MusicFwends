@@ -1,17 +1,19 @@
 <div class="row feed-title">
-  <div class="col-auto">
-    {{#unless user}}
-    <button id="logout" type="submit" class="btn">Log Out</button>
-    {{/unless}}
-    <h2>Welcome, {{user.username}}, to the feed page!</h2> 
+  <div class="card-body">
+      <div class="d-flex justify-content-end">
+        {{#unless user}}
+        <button id="logout" type="submit d-flex flex-row-reverse" class="btn">Log Out</button>
+        {{/unless}}
+      </div>
+    <h2 class="card-title">Welcome, {{user.username}}, to the feed page!</h2> 
   </div>
 </div>
 
-<div class="row new-post-div">
+<div class="card-body row new-post-div">
   <div class="col-12">
     <form class="form new-post-form">
       <div class="form-group form-row">
-        <textarea class="form-input col-8" id="post-content" placeholder="Write your mic drop moment here"/></textarea>
+        <textarea class="form-input col-8 rounded-lg" id="post-content" placeholder="Write your mic drop moment here"/></textarea>
         <div class="col-8">
           <button type="submit" class="btn btn-md btn-block">Create Post</button>
         </div>
@@ -20,19 +22,19 @@
   </div>
 
   {{#if posts.length}}
-  <div class="col-xl-12 post-list">
+  <div class="card-body post-list">
     <h3>Previous Posts:</h3>
 
     {{#each posts as |post|}}
     <div class="row">
       <div class="col-lg-12" id="existing-posts">
-        <h5><a href="/post/{{post.id}}">{{post.author.username}}</a>
+        <h5>{{post.user.username}} posted: <a href="/post/{{post.id}}"></a>
           {{post.content}}</h5>
 
         {{#if comments.length}}
         {{#each comments as |comment|}}
         <div class="col-md-12 existing-comments">
-          <p>{{comment.author.username}} commented:<a href="/comment/{{comment.id}}"></a>
+          <p>{{comment.user.email}} commented: <a href="/comment/{{comment.id}}"></a>
             {{comment.comment}}</p>
           {{/each}}
           {{/if}}

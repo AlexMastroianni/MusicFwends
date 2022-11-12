@@ -5,34 +5,11 @@
   --alternatewarmcolor: #e6d4b1;
   --alternatedarkcolor: #6a544d;
 }
-/* 
+
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
-} */
-
-header {
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background-color: var(--mainthemecolor);
-  height: 10rem;
 }
-
-.footer-card {
-  background-color: var(--mainthemecolor);
-  border-color: var(--mainthemecolor);
-  height: 50%;
-  margin-bottom: 0;
-}
-
-h1 {
-  color: var(--textcolor);
-  font-weight: bold;
-  text-align: center;
-  padding-top: 2.5rem;
-}
-
+h1,
 h2,
 h3,
 h4,
@@ -40,6 +17,7 @@ h6 {
   color: var(--textcolor);
   font-weight: bold;
   text-align: center;
+  padding-top: 0.5rem;
 }
 
 h5 {
@@ -50,17 +28,32 @@ p {
   color: var(--secondarythemecolor);
 }
 
-main {
-  height: 100%;
-  width: 100%;
+.header-card {
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: var(--mainthemecolor);
+}
+
+.main-card {
   background-color: var(--mainthemecolor);
   color: var(--textcolour);
   margin: 0;
 }
 
-img {
+.footer-card {
+  background-color: var(--mainthemecolor);
+  border-color: var(--mainthemecolor);
+  height: 50%;
+  margin-bottom: 0;
+}
+
+#app-icon {
   display: flex;
-  margin-bottom: 10rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  width: 10%;
 }
 
 label {
@@ -97,11 +90,11 @@ footer {
   align-items: flex-start;
   justify-content: flex-start;
 }
-
-#logout-btn {
+/* 
+#logout {
   display: flex;
   margin-left: 75rem;
-}
+} */
 
 #sign-up-btn {
   color: var(--alternatewarmcolor);
@@ -126,7 +119,7 @@ footer {
 }
 
 textarea {
-  border-radius: 10rem;
+  /* border-radius: 10rem; */
   margin-bottom: 2.5%;
 }
 

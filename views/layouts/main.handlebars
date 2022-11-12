@@ -15,25 +15,30 @@
   </head>
 
   <body>
-    <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center">
+    <header class="card border-0">
+      <div class="card-body header-card">
+        <img src="./images/icon.bmp"
+          class="rounded mx-auto d-block" 
+          id="app-icon" 
+          alt="A grey circle with upside down black headphones inside give the appearance of eyes and a smile. The face has melt drops at the bottom."
+        />
         <h1>Music Fwends</h1>
-        <img id="app-icon" src="./images/icon.bmp"/>
-      </header>
+      </div>
+    </header>
       
 
-      <main class="container-fluid">
+      <main class="card main-card border-0 rounded-0">
         <!-- Render the sub layout -->
         {{{body}}}
       </main>
 
-      <footer class="card">
+      <footer class="card border-0">
         <div class="card-body footer-card">
           <h6 class="footer-title">MUSIC FWENDS built by </p>
-          <p><a href="https://github.com/Virgona">Tobias</a></p>
-          <p><a href="https://github.com/AlexMastroianni">Alex</a></p>
-          <p><a href="https://github.com/ChristopherGatt">Chris</a></p>
-          <p><a href="https://github.com/RosemaryJF">Rosemary</a></p>
+          <p><a href="https://github.com/Virgona" class="text-secondary">Tobias</a></p>
+          <p><a href="https://github.com/AlexMastroianni" class="text-secondary">Alex</a></p>
+          <p><a href="https://github.com/ChristopherGatt" class="text-secondary">Chris</a></p>
+          <p><a href="https://github.com/RosemaryJF" class="text-secondary">Rosemary</a></p>
           &copy; 2022
         </div>
       </footer>
