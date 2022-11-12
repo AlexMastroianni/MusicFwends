@@ -1,3 +1,5 @@
+// Function to log the usaer out
+// when the logout button is clicked
 const logout = async () => {
   const response = await fetch('/api/user/logout', {
     method: 'POST',

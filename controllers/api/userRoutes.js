@@ -5,7 +5,7 @@ router.post('/', async (req, res) => {
   try {
     const newUser = await User.create(req.body);
 
-    // save the boolean that they are logged in and who is logged int to my cookies
+    // save the boolean that they are logged in and who is logged in to cookies
     req.session.save(() => {
       req.session.user_id = newUser.id;
       req.session.logged_in = true;
@@ -31,8 +31,8 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // user the Models "built-in" check password function to see if the password sent tot us
-    // -- matches the password attached to this user
+    // user the Models "built-in" check password function to see if the password sent
+    // matches the password attached to this user
     const validPassword = await userData.checkPassword(req.body.password);
 
     // if that comes back false, send a 400 then stop
@@ -43,12 +43,12 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // save the boolean that they are logged in and who is logged int to my cookies
+    // save the boolean that they are logged in and who is logged in to cookies
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      // send them some data back just to be nice
+      // send some data back just to be nice
       res.json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {

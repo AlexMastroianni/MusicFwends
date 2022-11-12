@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class PostTable extends Model { }
 
+// Post model and it's required attributes
 PostTable.init(
   {
     id: {

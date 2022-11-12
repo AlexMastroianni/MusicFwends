@@ -1,3 +1,4 @@
+/* Application theme colours */
 :root {
   --mainthemecolor: #444545;
   --secondarythemecolor: #5e7082;
@@ -9,6 +10,8 @@
 body {
   overflow-x: hidden;
 }
+
+/* Defines all header styling */
 h1,
 h2,
 h3,
@@ -20,14 +23,17 @@ h6 {
   padding-top: 0.5rem;
 }
 
+/* h5 defined differenly for rendered posts */
 h5 {
   color: var(--textcolor);
 }
 
+/* Defines all paragraph styling in a different colour */
 p {
   color: var(--secondarythemecolor);
 }
 
+/* Header card styling */
 .header-card {
   justify-content: center;
   align-items: center;
@@ -35,19 +41,24 @@ p {
   background-color: var(--mainthemecolor);
 }
 
+/* Main card styling */
 .main-card {
   background-color: var(--mainthemecolor);
   color: var(--textcolour);
   margin: 0;
 }
 
+/* Footer card styling */
 .footer-card {
   background-color: var(--mainthemecolor);
-  border-color: var(--mainthemecolor);
   height: 50%;
   margin-bottom: 0;
+  color: var(--textcolor);
+  font-weight: bold;
+  text-align: center;
 }
 
+/* Application icon styling */
 #app-icon {
   display: flex;
   align-items: center;
@@ -56,17 +67,8 @@ p {
   width: 10%;
 }
 
-label {
-  color: var(--textcolor);
-}
-
-footer {
-  background-color: var(--mainthemecolor);
-  color: var(--textcolor);
-  font-weight: bold;
-  text-align: center;
-}
-
+/* Form group styling
+ for login, signup and feed page */
 .form-group {
   justify-content: center;
   align-items: center;
@@ -75,6 +77,12 @@ footer {
   width: 100%;
 }
 
+/* Placeholder text styling */
+:placeholder-shown {
+  text-align: center;
+}
+
+/* Button styling */
 .btn {
   color: var(--alternatewarmcolor);
   justify-content: center;
@@ -85,48 +93,26 @@ footer {
   margin-top: 0%;
 }
 
-#app-icon {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-/* 
-#logout {
-  display: flex;
-  margin-left: 75rem;
-} */
-
-#sign-up-btn {
-  color: var(--alternatewarmcolor);
-}
-
+/* Increase of margin for sign up line
+ on homepage */
 #signup-redirect {
   margin-top: 3.5rem;
 }
 
+/* Increase of margin for sign up btn
+ on signup page */
 #sign-me-up-btn {
   margin: 0.2rem;
 }
 
-#sign-up-link ::after {
-  color: var(--secondarythemecolor);
-}
-
+/* Password strength checker styling */
 #password-strength-result {
   font-weight: bold;
   font-size: medium;
   color: #fff;
 }
 
-textarea {
-  /* border-radius: 10rem; */
-  margin-bottom: 2.5%;
-}
-
-:placeholder-shown {
-  text-align: center;
-}
-
+/* Further card styling */
 .login-form,
 .feed-title,
 #existing-posts,
@@ -135,9 +121,4 @@ textarea {
   align-items: center;
   text-align: center;
   width: 100%;
-}
-
-#existing-posts {
-  border-color: #b7b8b8;
-  border-width: 5px;
 }

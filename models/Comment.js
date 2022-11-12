@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class CommentTable extends Model { }
 
+// Comment model and it's required attributes
 CommentTable.init(
   {
     id: {

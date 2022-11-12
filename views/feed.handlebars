@@ -1,3 +1,4 @@
+<!-- Feed title Card  -->
 <div class="row feed-title">
   <div class="card-body">
       <div class="d-flex justify-content-end">
@@ -9,6 +10,7 @@
   </div>
 </div>
 
+<!-- Card to create a new post -->
 <div class="card-body row new-post-div">
   <div class="col-12">
     <form class="form new-post-form">
@@ -21,6 +23,8 @@
     </form>
   </div>
 
+  <!-- Card to show previous posts and applicable comments  -->
+  {{!-- All rendered through handlebar utility functions --}}
   {{#if posts.length}}
   <div class="card-body post-list">
     <h3>Previous Posts:</h3>

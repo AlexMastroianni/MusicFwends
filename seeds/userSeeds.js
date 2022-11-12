@@ -1,3 +1,4 @@
+// User seeds data
 const userData = [
   {
     id: 1,

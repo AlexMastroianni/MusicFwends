@@ -1,22 +1,27 @@
-<div class="col-12 container-sm">
+<!-- Card contains all the login form elements  -->
+<div class="card-body col-12 container-sm border-0">
   <h2>Been here before?</h2>
 
+  <!-- Email input  -->
   <form class="form login-form">
     <div class="form-group form-row">
       <div class="col-3">
         <input type="email" class="form-control" id="email-login" placeholder="Email: email@email.com" aria-describedby="emailInput">
       </div>
 
+      <!-- Password input -->
       <div class="col-3">
         <input type="password" id="password-login" class="form-control" placeholder="Password: password12345!" aria-describedby="passwordEntryToLogin">
       </div>
     </div>
-      
+    
+    <!-- Log in button  -->
     <div class="form-group form-row">
       <div class="col-6">
         <button class="btn btn-md btn-block" type="submit">Log In</button>
       </div>
       
+      <!-- Sign up page redirect div  -->
       <div class="col-12" id="signup-redirect">
         <h6>First time?      
           <button class="btn btn-sm" type="submit" id="sign-up-btn">Sign up!</button>

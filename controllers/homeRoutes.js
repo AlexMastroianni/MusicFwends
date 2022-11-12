@@ -1,6 +1,6 @@
 const router = require('express').Router();
-// const withAuth = require('../utils/auth');
 
+// Renders the homepage
 router.get('/', async (req, res) => {
   try {
     res.render('homepage');
@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Renders the signup page
 router.get('/signup', async (req, res) => {
   try {
     res.render('signup');
