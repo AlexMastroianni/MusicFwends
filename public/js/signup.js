@@ -1,3 +1,4 @@
+// Function to create a new user when the sign up form is filled in
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -24,9 +25,12 @@ document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
 
+// Password Strength checker function
 let strengthText = document.querySelector('#password-strength-result');
 let passwordInput = document.querySelector('#password-signup');
 
+// Password strength checker default options
+// Shown underneath the password input as it is typed
 const defaultOptions = [
   {
     id: 0,

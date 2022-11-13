@@ -1,3 +1,4 @@
+// Function to login
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -22,6 +23,8 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// Function to redirect the user to the signup page
+// when the signup button is clicked
 const signupBtnHandler = async (event) => {
   event.preventDefault();
 

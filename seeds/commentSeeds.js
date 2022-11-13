@@ -1,3 +1,4 @@
+// Comment seeds data
 const commentData = [
   {
     id: 1,

@@ -1,3 +1,4 @@
+// Post seeds data
 const postData = [
   {
     id: 1,

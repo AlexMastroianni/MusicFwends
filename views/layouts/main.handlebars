@@ -1,46 +1,52 @@
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/style.css" />
-
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>Music Fwends</title>
-    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png"/>
   </head>
 
   <body>
-    <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center">
+    <!-- Header Card  -->
+    <header class="card border-0">
+      <div class="card-body header-card">
+        <img src="./images/icon.bmp"
+          class="rounded mx-auto d-block" 
+          id="app-icon" 
+          alt="A grey circle with upside down black headphones inside give the appearance of eyes and a smile. The face has melt drops at the bottom."
+        />
         <h1>Music Fwends</h1>
-        <img id="app-icon" src="./images/icon.bmp"/>
-      </header>
+      </div>
+    </header>
       
-
-      <main class="container-fluid">
-        <!-- Render the sub layout -->
+      <!-- Main Card  -->
+      <main class="card main-card border-0 rounded-0">
+        <!-- Handlebars renders the sub layout -->
         {{{body}}}
       </main>
 
-      <footer class="card">
+      <!-- Footer Card  -->
+      <footer class="card border-0">
         <div class="card-body footer-card">
           <h6 class="footer-title">MUSIC FWENDS built by </p>
-          <p><a href="https://github.com/Virgona">Tobias</a></p>
-          <p><a href="https://github.com/AlexMastroianni">Alex</a></p>
-          <p><a href="https://github.com/ChristopherGatt">Chris</a></p>
-          <p><a href="https://github.com/RosemaryJF">Rosemary</a></p>
+          <p><a href="https://github.com/Virgona" class="text-secondary">Tobias</a></p>
+          <p><a href="https://github.com/AlexMastroianni" class="text-secondary">Alex</a></p>
+          <p><a href="https://github.com/ChristopherGatt" class="text-secondary">Chris</a></p>
+          <p><a href="https://github.com/RosemaryJF" class="text-secondary">Rosemary</a></p>
           &copy; 2022
         </div>
       </footer>
 
     </div>
 
-    <!-- Render script for logged in users only -->
+    <!-- Renders script for logged in users only -->
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
@@ -56,6 +62,10 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"
+  >
+  </script>
+  <script 
+    src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=[pt_a4dee177920383db61f338590d0a6f]"
   >
   </script>
 </html>

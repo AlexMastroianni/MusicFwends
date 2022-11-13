@@ -20,33 +20,34 @@ const newPostHandler = async (event) => {
   }
 };
 
+// Future function to implemented
 // Function to create new comment
-const newCommentHandler = async (event) => {
-  event.preventDefault();
+// const newCommentHandler = async (event) => {
+//   event.preventDefault();
 
-  const commentContent = document
-    .querySelector('#comment-content')
-    .value.trim();
+//   const commentContent = document
+//     .querySelector('#comment-content')
+//     .value.trim();
 
-  const authorId = document.querySelector('#author_id').value.trim();
-  const postId = document.querySelector('#post_id').value.trim();
+//   const authorId = document.querySelector('#author_id').value.trim();
+//   const postId = document.querySelector('#post_id').value.trim();
 
-  if (commentContent && authorId && postId) {
-    const response = await fetch('/api/feed', {
-      method: 'POST',
-      body: JSON.stringify({ commentContent, authorId, postId }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+//   if (commentContent && authorId && postId) {
+//     const response = await fetch('/api/feed', {
+//       method: 'POST',
+//       body: JSON.stringify({ commentContent, authorId, postId }),
+//       headers: {
+//         'Content-Type': 'application/json'
+//       }
+//     });
 
-    if (response.ok) {
-      document.location.replace('/feed');
-    } else {
-      alert('Failed to create new comment');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/feed');
+//     } else {
+//       alert('Failed to create new comment');
+//     }
+//   }
+// };
 
 // Function to delete post
 const delButtonHandler = async (event) => {
@@ -66,15 +67,9 @@ const delButtonHandler = async (event) => {
   }
 };
 
-// Still to create
 document
   .querySelector('.new-post-form')
   .addEventListener('submit', newPostHandler);
-
-// Still to create
-// document
-//   .querySelector('.new-comment-form')
-//   .addEventListener('submit', newCommentHandler);
 
 document
   .querySelector('.post-list')

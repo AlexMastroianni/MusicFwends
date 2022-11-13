@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Retrieves and POST's the new post data whilst checking the user is logged in
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPostData = await Post.create({
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Retrieves an exisiting post whilst checking the user is logged in
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
