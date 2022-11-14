@@ -66,6 +66,14 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const postTextArea = document.getElementById('textarea');
+insertTextAtCursor(postTextArea, 'emoji-picker');
+
+//emoji event listener
+document
+  .querySelector('emoji-picker')
+  .addEventListener('emoji-click', (event) => console.log(event.detail));
+
 // Still to create
 document
   .querySelector('.new-post-form')
