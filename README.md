@@ -102,11 +102,11 @@ Bootstrap
 
 ## Screenshots
 
-![MusicFwends login/homepage page](public\images\homepage-screenshot.jpg)
+![MusicFwends login/homepage page](public/images/homepage-screenshot.jpg)
 
-![MusicFwends signup page](public\images\signuppage-screenshot.jpg)
+![MusicFwends signup page](public/images/signuppage-screenshot.jpg)
 
-![MusicFwends feed page](public\images\feedpage-screenshot.jpg)
+![MusicFwends feed page](public/images/feedpage-screenshot.jpg)
 
 ## Future Development
 
